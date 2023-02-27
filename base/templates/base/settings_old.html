@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>Full Name</label>
+        <input type="text" name="fullname" placeholder="e.g Amr" />
+    
+        <label>Username</label>
+        <input type="text" name="username" placeholder="e.g amr" />
+
+        <label>Email</label>
+        <input type="text" name="username" placeholder="e.g user@gmail.com" />
+
+        <label>About</label>
+        <input type="text" name="username" placeholder="Write about yourself..." />
+    
+        <input type="submit" value="Update Settings" />
+        <input type="submit" value="Cancel" />
+    </form>
+</div>
+{% endif %}
+
+{% endblock content %}
